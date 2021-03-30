@@ -28,8 +28,6 @@ var onRemoveAll = function onRemoveAll() {
 
 // Assignment to html
 var appRoot = document.getElementById("app");
-
-var numbers = [55, 101, 1000];
 // JSX - Javascript XML file
 
 var render = function render() {

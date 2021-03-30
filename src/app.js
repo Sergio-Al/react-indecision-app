@@ -26,8 +26,6 @@ const onRemoveAll = () => {
 
 // Assignment to html
 const appRoot = document.getElementById("app");
-
-const numbers = [55, 101, 1000];
 // JSX - Javascript XML file
 
 const render = () => {
@@ -37,9 +35,6 @@ const render = () => {
       {app.subtitle && <p>{app.subtitle}</p>}
       <p>{app.options.length > 0 ? "Here are your options" : "No options"}</p>
       <p>{app.options.length}</p>
-      {/* {
-        numbers.map((number) => <p key={number}>Number: {number}</p>)
-      } */}
       <ol>
         {app.options.map((option) => <li key={option}>{option}</li>)}
       </ol>
