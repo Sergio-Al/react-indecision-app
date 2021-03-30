@@ -26,6 +26,12 @@ var onRemoveAll = function onRemoveAll() {
   render();
 };
 
+var onMakeDecision = function onMakeDecision() {
+  var randomNum = Math.floor(Math.random() * app.options.length); // floor for rounding the random float number
+  var option = app.options[randomNum];
+  alert(option);
+};
+
 // Assignment to html
 var appRoot = document.getElementById("app");
 // JSX - Javascript XML file
@@ -55,6 +61,16 @@ var render = function render() {
       app.options.length
     ),
     React.createElement(
+      "button",
+      { disabled: app.options.length === 0, onClick: onMakeDecision },
+      "What should i do?"
+    ),
+    React.createElement(
+      "button",
+      { onClick: onRemoveAll },
+      "RemoveAll"
+    ),
+    React.createElement(
       "ol",
       null,
       app.options.map(function (option) {
@@ -64,11 +80,6 @@ var render = function render() {
           option
         );
       })
-    ),
-    React.createElement(
-      "button",
-      { onClick: onRemoveAll },
-      "RemoveAll"
     ),
     React.createElement(
       "form",
