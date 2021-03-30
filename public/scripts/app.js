@@ -3,7 +3,7 @@
 console.log("App js is running!");
 
 var app = {
-  title: "Indecision App",
+  title: "Indecision App Remote",
   subtitle: "This is the subtitle for the indecision app",
   options: []
 };
@@ -28,6 +28,8 @@ var onRemoveAll = function onRemoveAll() {
 
 // Assignment to html
 var appRoot = document.getElementById("app");
+
+var numbers = [55, 101, 1000];
 // JSX - Javascript XML file
 
 var render = function render() {
@@ -57,16 +59,13 @@ var render = function render() {
     React.createElement(
       "ol",
       null,
-      React.createElement(
-        "li",
-        null,
-        "Item one"
-      ),
-      React.createElement(
-        "li",
-        null,
-        "Item two"
-      )
+      app.options.map(function (option) {
+        return React.createElement(
+          "li",
+          { key: option },
+          option
+        );
+      })
     ),
     React.createElement(
       "button",
