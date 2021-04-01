@@ -14,11 +14,7 @@ class IndecisionApp extends React.Component {
     alert(this.state.options[randomNum]);
   }
   handleDeleteOptions() {
-    this.setState(() => {
-      return {
-        options: [],
-      };
-    });
+    this.setState(() => ({ options: [] }));
   }
   handleAddOption(option) {
     if (!option) {
@@ -28,9 +24,7 @@ class IndecisionApp extends React.Component {
     }
 
     this.setState((prevState) => {
-      return {
-        options: prevState.options.concat(option),
-      };
+      ({ options: prevState.options.concat(option) });
     });
   }
   render() {
@@ -54,8 +48,8 @@ class IndecisionApp extends React.Component {
 }
 
 IndecisionApp.defaultProps = {
-  options: []
-}
+  options: [],
+};
 
 // function stateless component
 const Header = (props) => {
@@ -68,8 +62,8 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  title: 'Indecision'
-}
+  title: "Indecision",
+};
 
 // function stateless component
 const Action = (props) => {
@@ -115,9 +109,7 @@ class AddOption extends React.Component {
     const option = e.target.elements.option.value.trim();
     const error = this.props.handleAddOption(option);
 
-    this.setState(() => {
-      return { error };
-    });
+    this.setState(() => ({ error }));
   }
   render() {
     return (
@@ -132,4 +124,7 @@ class AddOption extends React.Component {
   }
 }
 
-ReactDOM.render(<IndecisionApp options={['Option one', 'Second District']} />, document.getElementById("app"));
+ReactDOM.render(
+  <IndecisionApp options={["Option one", "Second District"]} />,
+  document.getElementById("app")
+);

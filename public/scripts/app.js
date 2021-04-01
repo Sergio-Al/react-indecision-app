@@ -35,9 +35,7 @@ var IndecisionApp = function (_React$Component) {
     key: "handleDeleteOptions",
     value: function handleDeleteOptions() {
       this.setState(function () {
-        return {
-          options: []
-        };
+        return { options: [] };
       });
     }
   }, {
@@ -50,9 +48,7 @@ var IndecisionApp = function (_React$Component) {
       }
 
       this.setState(function (prevState) {
-        return {
-          options: prevState.options.concat(option)
-        };
+        ({ options: prevState.options.concat(option) });
       });
     }
   }, {
@@ -82,9 +78,10 @@ var IndecisionApp = function (_React$Component) {
 
 IndecisionApp.defaultProps = {
   options: []
+};
 
-  // function stateless component
-};var Header = function Header(props) {
+// function stateless component
+var Header = function Header(props) {
   return React.createElement(
     "div",
     null,
@@ -102,10 +99,11 @@ IndecisionApp.defaultProps = {
 };
 
 Header.defaultProps = {
-  title: 'Indecision'
+  title: "Indecision"
+};
 
-  // function stateless component
-};var Action = function Action(props) {
+// function stateless component
+var Action = function Action(props) {
   return React.createElement(
     "div",
     null,
@@ -204,4 +202,4 @@ var AddOption = function (_React$Component2) {
   return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, { options: ['Option one', 'Second District'] }), document.getElementById("app"));
+ReactDOM.render(React.createElement(IndecisionApp, { options: ["Option one", "Second District"] }), document.getElementById("app"));
