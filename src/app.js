@@ -86,7 +86,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  title: "Indecision",
+  title: "Indecision app!",
 };
 
 // function stateless component
