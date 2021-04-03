@@ -3,31 +3,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import IndecisionApp from "./components/IndecisionApp";
 
-ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
+const Layout = (props) => {
+  return (
+    <div>
+      <p>Header</p>
+      {props.children}
+      <p>Footer</p>
+    </div>
+  );
+};
 
-// class OldSyntax {
-//   constructor() {
-//     this.name = "mike";
-//     this.getGreeting = this.getGreeting.bind(this);
-//   }
-//   getGreeting() {
-//     return `Hello my name is ${this.name}.`;
-//   }
-// }
-
-// const oldSyntax = new OldSyntax();
-// const getGreeting = oldSyntax.getGreeting;
-// console.log(getGreeting());
-
-// // --------------
-
-// class NewSyntax {
-//   name = "Jen";
-//   getGreeting = () => {
-//     return `Hello my name is ${this.name}`;
-//   }
-// }
-
-// const newSyntax = new NewSyntax();
-// const newGetGreeting = newSyntax.getGreeting;
-// console.log(newGetGreeting());
+ReactDOM.render(
+  <Layout>
+    <h1>page title</h1>
+    <p>This is my page</p>
+  </Layout>,
+  document.getElementById("app")
+);
