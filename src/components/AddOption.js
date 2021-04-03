@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // Add option
 export default class AddOption extends React.Component {
@@ -11,7 +11,6 @@ export default class AddOption extends React.Component {
   }
   handleAddOptions(e) {
     e.preventDefault();
-
     const option = e.target.elements.option.value.trim();
     const error = this.props.handleAddOption(option);
 
