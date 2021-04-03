@@ -11,4 +11,13 @@ module.exports = {
     // filename you can put anything name that you like
     filename: "bundle.js",
   },
+  module: {
+    rules: [
+      {
+        loader: "babel-loader",
+        test: /\.js$/,
+        exclude: /node_modules/,
+      },
+    ],
+  },
 };
